@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz App</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <section id="start-screen">
+
+        <h2>Quiz App</h2>
+        <img src="/icon/brain.png" alt="">
+        <div id="name">
+            <label for="">Enter your name</label>
+            <input type="name" placeholder="Alex" id="user-name">
+        </div>    
+        <button id="start-button" onclick="startquiz()">Start Quiz</button>
+
+    </section>
+    <section id="quiz-screen" class="hidden">
+
+        <img src="/icon/brain.png" alt="">
+
+        <h2 id="question" ></h2>
+
+        <div id="options">
+            <button class="option">Option 1</button>
+            <button class="option">Option 2</button>
+            <button class="option">Option 3</button>
+            <button class="option">Option 4</button>
+        </div>
+
+        <button id="next-button">Next</button>
+        <p id="feedback"></p>
+    </section>
+    <section id="result-screen" class="hidden">
+        <img src="/icon/brain.png" alt="">
+        <h3>Player: <span id="result-name"></span></h3>
+        <h2>Your Score: <span id="score"></span></h2>
+        <button id="restart-button">Restart</button>
+    
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
