@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="main-container">
+        <div class="card" id="login-form">
+            <h2>Welcome Back</h2>
+            <p class="heading">Login to your account</p>
+            
+            <form id="login">
+                <div class="input">
+                    <label for="login-email">Email</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="login-email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <span class="error-message" id="login-email-error"></span>
+                </div>
+
+                <div class="input">
+                    <label for="login-password">Password</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+                        <i class="fas fa-eye-slash toggle-password" data-target="login-password"></i>
+                    </div>
+                    <span class="error-message" id="login-password-error"></span>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn" disabled>Login</button>
+            </form>
+
+            <div class="toggle-container">
+                <p>Don't have an account? <button type="button" class="toggle-btn" data-form="signup" id="signup-btn">Sign Up</button></p>
+            </div>
+        </div>
+        <div class="card" id="signup-form" style="display: none;">
+            <h2>Create Account</h2>
+            <p class="heading">Join us today</p>
+            
+            <form id="signup">
+                <div class="input">
+                    <label for="signup-name">Full Name</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="signup-name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <span class="error-message" id="signup-name-error"></span>
+                </div>
+
+                <div class="input">
+                    <label for="signup-email">Email</label>
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <span class="error-message" id="signup-email-error"></span>
+                </div>
+
+                <div class="input">
+                    <label for="signup-password">Password</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                        <i class="fas fa-eye-slash toggle-password" data-target="signup-password"></i>
+                    </div>
+                    <span class="error-message" id="signup-password-error"></span>
+                </div>
+
+                <div class="input">
+                    <label for="signup-confirm-password">Confirm Password</label>
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signup-confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                        <i class="fas fa-eye-slash toggle-password" data-target="signup-confirm-password"></i>
+                    </div>
+                    <span class="error-message" id="signup-confirm-error"></span>
+                </div>
+
+                <button type="submit" class="submit-btn" disabled>Sign Up</button>
+            </form>
+
+            <div class="toggle-container">
+                <p>Already have an account? <button type="button" class="toggle-btn" data-form="login" id="login-btn">Login</button></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
