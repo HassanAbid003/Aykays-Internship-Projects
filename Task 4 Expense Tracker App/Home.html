@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <h2 class="logo">Trackerz</h2>
+
+            <div id="nav-right">
+                <i class="fa-regular fa-user" onclick="showProfile()"></i>
+                <i class="fa-solid fa-moon" id="darkModeToggle"></i>
+                <span id="welcome">Welcome back,<br><small id="navName"></small></span>
+                <i class="fa-solid fa-right-from-bracket" id="logout" onclick="handleLogout()"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <aside>
+                <img src="./images/145856997_296fe121-5dfa-43f4-98b5-db50019738a7.jpg" alt="">
+                <h3 id="name">Hassan</h3>
+                
+                <div id="options">
+                    <p><i class="fas fa-home"></i> Home</p>
+                    <p><i class="fas fa-user"></i> Profile</p>
+                    <p><i class="fas fa-chart-line"></i> Expenses</p>
+                    <p onclick="openTaskSection()"><i class="fas fa-tasks"></i> Tasks</p>
+                    <p><i class="fas fa-cog"></i> Settings</p>
+                    <p><i class="fas fa-headset"></i> Support</p>
+                </div>
+
+                <h1 id="logo">Trackerz</h1>
+            </aside>
+            <div id="container">
+                <div id="top-cards">
+                    <!-- card1 -->
+                    <div id="dashboard">
+                        <h4><i class="fas fa-chart-line"></i> Dashboard</h4>
+                        <div class="line"></div>
+                        
+                        <div class="stat-item">
+                            <span><i class="fas fa-wallet"></i> Balance</span>
+                            <span id="balanceAmount" class="stat-value">$0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span><i class="fas fa-arrow-up"></i> Total Income</span>
+                            <span id="totalIncome" class="stat-value income">$0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span><i class="fas fa-arrow-down"></i> Total Expenses</span>
+                            <span id="totalExpense" class="stat-value expense">$0</span>
+                        </div>
+                    </div>
+                    <!-- card2 -->
+                    <div id="expenses">
+                        <h4>Add Transaction</h4>
+                        <div class="line"></div>
+                        
+                        <input type="text" id="description" placeholder="e.g. Grocery shopping, Salary, Transport" class="input-field">
+                        <input type="number" id="amount" placeholder="e.g. 500 or 1200" class="input-field">
+                        
+                        <select id="type" class="input-field">
+                            <option value="" disabled selected>Select transaction type</option>
+                            <option value="income"> Income</option>
+                            <option value="expense"> Expense</option>
+                        </select>
+                        
+                        <select id="category" class="input-field">
+                            <option value="" disabled selected>Select category</option>
+                            <option value="food"><i class="fas fa-utensils"></i> Food</option>
+                            <option value="transport"><i class="fas fa-car"></i> Transport</option>
+                            <option value="shopping"><i class="fas fa-shopping-bag"></i> Shopping</option>
+                            <option value="bills"><i class="fas fa-file-invoice"></i> Bills</option>
+                            <option value="other"><i class="fas fa-ellipsis-h"></i> Other</option>
+                        </select>
+                        
+                        <button id="addBtn" class="add-button"><i class="fas fa-plus"></i> Add Transaction</button>
+                    </div>
+                </div>
+                <div id="middle-card">
+                    <div id="quick-access" class="card">
+
+                        <h4>Task Reminder</h4>
+                        <div class="line"></div>
+
+                        <div id="displayMode">
+                            <div id="middleBoxTask">
+                                No tasks
+                            </div>
+                            <button onclick="showInput()">+ Add Task</button>
+                        </div>
+
+                        <div id="inputMode" style="display: none;">
+                        <input type="text" id="taskInput" placeholder="Enter task">
+                        <button onclick="addTaskFromMiddle()">Add</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="monthly-report" class="card">
+                    <h4><i class="fas fa-history"></i> Transaction History</h4>
+                    <div class="line"></div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all"><i class="fas fa-list"></i> All</button>
+                        <button class="filter-btn" data-filter="income"><i class="fas fa-arrow-up"></i> Income</button>
+                        <button class="filter-btn" data-filter="expense"><i class="fas fa-arrow-down"></i> Expense</button>
+                        <button class="filter-btn" data-filter="food"><i class="fas fa-utensils"></i> Food</button>
+                        <button class="filter-btn" data-filter="transport"><i class="fas fa-car"></i> Transport</button>
+                        <button class="filter-btn" data-filter="shopping"><i class="fas fa-shopping-bag"></i> Shopping</button>
+                        <button class="filter-btn" data-filter="bills"><i class="fas fa-file-invoice"></i> Bills</button>
+                        <button class="filter-btn" data-filter="other"><i class="fas fa-ellipsis-h"></i> Other</button>
+                    </div>                    
+                
+                    <div id="transaction-list">
+                        <p style="color: gray; text-align: center;">No transactions yet. Add one!</p>
+                    </div>
+                </div>
+                <div id="profile-section" style="display: none;">
+                    <div class="card profile-card">
+                        <h4><i class="fas fa-user-circle"></i> User Profile</h4>
+                        <div class="line"></div>
+                        
+                        <div class="profile-info">
+                            <img src="./images/145856997_296fe121-5dfa-43f4-98b5-db50019738a7.jpg" alt="Profile" class="profile-img">
+                            <h2 id="profileName"></h2>
+                            <p><i class="fas fa-envelope"></i><span id="profileEmail"></span></p>
+                            <p><i class="fas fa-calendar"></i> Member since: 2024</p>
+                            <p><i class="fas fa-chart-line"></i> Total Transactions: <span id="profileCount">0</span></p>
+                            <p><i class="fas fa-dollar-sign"></i> Total Balance: <span id="profileBalance">$0</span></p>
+                        </div>
+                        
+                        <button class="edit-profile-btn" id="edit-btn" onclick="alert('Edit profile coming soon!')">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+                </div>
+                <div id="task-section" style="display: none;">
+                    <div class="card">
+                        <h4>
+                            <i class="fas fa-tasks"></i> My Tasks
+                        </h4>
+                        <div class="line"></div>
+                        
+                        <div class="task-input-area">
+                            <input type="text" id="taskInput" placeholder="Enter a task...">
+                            <button id="addTaskBtn">+ Add Task</button>
+                        </div>
+                        
+                        <div id="taskList"></div>
+                    </div>
+                </div>
+                <div id="chart-row">
+                    <div class="chart-box" id="chart1" style="display: none;">
+                        <h4>Income vs Expense</h4>
+                        <canvas id="incomeExpenseChart"></canvas>
+                    </div>
+                    <div class="chart-box" id="chart2" style="display: none;">
+                        <h4>Category Breakdown</h4>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+                </div>            
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAQyrcGMysjLnLeBWf3wXUDcihy6wiZf0c",
+        authDomain: "expense-tracker-app-a1053.firebaseapp.com",
+        projectId: "expense-tracker-app-a1053",
+        storageBucket: "expense-tracker-app-a1053.firebasestorage.app",
+        messagingSenderId: "889776348996",
+        appId: "1:889776348996:web:cb302c04c62fab44288111",
+        measurementId: "G-95TJ27EC1G"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="authentication.js"></script>
+    <script src="script.js"></script>
+    <script src="charts.js"></script>
+</body>    
+</html>
+
