@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Grid</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  .swipe-btn.confirmed .swipe-track-label { 
+  opacity: 0; 
+  }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Our Collection</h1>
+  <p>Designed for comfort. Built to last.</p>
+  <p>Free shipping on orders over $500</p>
+</header>
+
+<main class="grid">
+ 
+  <!-- Card 1 -->
+  <article class="card" aria-expanded="false" aria-label="Olive Velvet Dining Chair, $349. Press Enter to see details.">
+    <div class="card-img-wrap">
+      <img src="/images/furniture-modern-studio-lifestyle-green.jpg" alt="Olive Velvet Dining Chair" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">Bestseller</p>
+      <h2 class="card-title">Olive Velvet Dining Chair</h2>
+      <p class="card-price">From <span>$349</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">Bestseller</p>
+      <h3 class="overlay-title">Olive Velvet Dining Chair</h3>
+      <p class="overlay-desc">Lush olive-green velvet upholstery on solid oak legs. Padded seat and back for all-day comfort. Suits dining rooms and reading nooks alike.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+  <!-- Card 2 -->
+  <article class="card" aria-expanded="false" aria-label="Cream Bouclé Accent Chair, $529. Press Enter to see details." width="480" height="360" >
+    <div class="card-img-wrap">
+      <img src="/images/beautiful-luxury-pillow-sofa-decoration-living-room-interior-vintage-light-filter.jpg" alt="Cream Bouclé Accent Chair" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">New Arrival</p>
+      <h2 class="card-title">Cream Bouclé Accent Chair</h2>
+      <p class="card-price">From <span>$529</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">New Arrival</p>
+      <h3 class="overlay-title">Cream Bouclé Accent Chair</h3>
+      <p class="overlay-desc">Soft rounded silhouette in premium bouclé fabric. Walnut-finished pedestal base. A statement piece that blends warmth with modern elegance.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+  <!-- Card 3 -->
+  <article class="card" aria-expanded="false" aria-label="Eames-Style Shell Chair, $279. Press Enter to see details.">
+    <div class="card-img-wrap">
+      <img src="/images/dillon-mangum-9489sFfgk4c-unsplash.jpg" alt="Eames-Style Shell Chair" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">Limited</p>
+      <h2 class="card-title">Eames-Style Shell Chair</h2>
+      <p class="card-price">From <span>$279</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">Limited</p>
+      <h3 class="overlay-title">Eames-Style Shell Chair</h3>
+      <p class="overlay-desc">Iconic molded plastic shell in glossy white with natural wood Eiffel base. Lightweight, stackable, and effortlessly timeless. A mid-century classic.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+  <!-- Card 4 -->
+  <article class="card" aria-expanded="false" aria-label="White Mesh Bar Stool, $419. Press Enter to see details.">
+    <div class="card-img-wrap">
+      <img src="/images/rashid-khreiss-TN4DuLKtA8Q-unsplash.jpg" alt="White Mesh Bar Stool" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">Essentials</p>
+      <h2 class="card-title">White Mesh Bar Stool</h2>
+      <p class="card-price">From <span>$419</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">Essentials</p>
+      <h3 class="overlay-title">White Mesh Bar Stool</h3>
+      <p class="overlay-desc">Breathable woven mesh back on a chrome-finish adjustable column. Height-adjustable from counter to bar height. Minimalist design for kitchen islands or studios.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+  <!-- Card 5 -->
+  <article class="card" aria-expanded="false" aria-label="Natural Plywood Side Chair, $229. Press Enter to see details.">
+    <div class="card-img-wrap">
+      <img src="/images/yu-carla-Or3zn5zbgzE-unsplash.jpg" alt="Natural Plywood Side Chair" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">Popular</p>
+      <h2 class="card-title">Natural Plywood Side Chair</h2>
+      <p class="card-price">From <span>$229</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">Popular</p>
+      <h3 class="overlay-title">Natural Plywood Side Chair</h3>
+      <p class="overlay-desc">Organically shaped bent-plywood seat and back in natural birch finish. Perforated backrest for ventilation. Featherlight at just 3.2kg — easy to move anywhere.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+  <!-- Card 6 -->
+  <article class="card" aria-expanded="false" aria-label="Mustard Lounge Armchair, $649. Press Enter to see details.">
+    <div class="card-img-wrap">
+      <img src="/images/photo-1586023492125-27b2c045efd7.jpg" alt="Mustard Lounge Armchair" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">Handmade</p>
+      <h2 class="card-title">Mustard Lounge Armchair</h2>
+      <p class="card-price">From <span>$649</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">Handmade</p>
+      <h3 class="overlay-title">Mustard Lounge Armchair</h3>
+      <p class="overlay-desc">Deep-cushioned mustard fabric armchair with slim black powder-coated legs. Hand-stitched seams and high-density foam. Perfect for a living room focal point.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+  <!-- Card 7 -->
+  <article class="card" aria-expanded="false" aria-label="Beech Wood Stacking Chair, $299. Press Enter to see details.">
+    <div class="card-img-wrap">
+      <img src="/images/objecttype-raw-ZCarpyNlYPQ-unsplash.jpg" alt="Beech Wood Stacking Chair" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">Organic</p>
+      <h2 class="card-title">Beech Wood Stacking Chair</h2>
+      <p class="card-price">From <span>$299</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">Organic</p>
+      <h3 class="overlay-title">Beech Wood Stacking Chair</h3>
+      <p class="overlay-desc">Solid steamed beech in a warm honey finish. Circular seat and minimalist backrest inspired by Danish craft. Stackable up to 6 chairs high for easy storage.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+  <!-- Card 8 -->
+  <article class="card" aria-expanded="false" aria-label="Red Lacquered Dining Chair, $389. Press Enter to see details.">
+    <div class="card-img-wrap">
+      <img src="/images/valentin-lacoste-GcepdU3MyKE-unsplash.jpg" alt="Red Lacquered Dining Chair" loading="lazy" width="480" height="360">
+    </div>
+    <div class="card-info">
+      <p class="card-tag">Craft</p>
+      <h2 class="card-title">Red Lacquered Dining Chair</h2>
+      <p class="card-price">From <span>$389</span></p>
+    </div>
+    <div class="card-overlay" aria-hidden="true">
+      <p class="overlay-tag">Craft</p>
+      <h3 class="overlay-title">Red Lacquered Dining Chair</h3>
+      <p class="overlay-desc">Bold candy-red high-gloss lacquered shell on matte black steel legs. A striking contemporary design that makes any dining room unforgettable. Wipe-clean finish.</p>
+      <button class="btn-see-more">See More</button>
+    </div>
+  </article>
+ 
+</main>
+ 
+<div class="modal-backdrop" id="modal">
+  <div class="modal-box">
+    <button class="modal-close">✕</button>
+    <img class="modal-img" src="" alt="">
+    <div class="modal-body">
+      <p class="modal-tag"></p>
+      <h2 class="modal-title"></h2>
+      <p class="modal-desc"></p>
+      <p class="modal-price"></p>
+      <ul class="modal-specs">
+        <li><i class="fa-solid fa-truck"></i> Ships in 3–5 business days</li>
+        <li><i class="fa-solid fa-weight-hanging"></i> Weight capacity: 120kg</li>
+        <li><i class="fa-solid fa-leaf"></i> Eco-friendly materials</li>
+        <li><i class="fa-solid fa-screwdriver-wrench"></i> Easy self-assembly</li>
+      </ul>
+      <div class="modal-quantity">
+        <button class="qty-btn" id="qty-minus">−</button>
+        <span class="qty-value" id="qty-value">1</span>
+        <button class="qty-btn" id="qty-plus">+</button>
+      </div>
+      <div class="swipe-btn" data-name="Olive Velvet Dining Chair">
+        <span class="swipe-track-label">Add to cart</span>
+        <div class="swipe-pill"></div>
+        <span class="swipe-confirm-text">✓ Added to cart</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
